@@ -12,6 +12,7 @@ public:
     friend int operator==(Time &o1, int sec);
     friend int operator>(Time& o1, int sec);
     friend int operator<(Time& o1, int sec);
+    friend int operator!=(Time& o1, int sec);
 };
 
 
@@ -30,6 +31,10 @@ int operator<(Time& o1, int sec){
 
     return (o1.m_sec < sec);
 
+}
+
+int operator!=(Time& o1, int sec){
+    return (o1.m_sec != sec);
 }
 
 
