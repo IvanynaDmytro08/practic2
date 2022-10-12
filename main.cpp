@@ -14,7 +14,7 @@ public:
     friend int operator<(Time& o1, int sec);
     friend int operator!=(Time& o1, int sec);
     friend std::istream& operator >>(std::istream &in, Time &o);
-
+    friend std::ostream& operator << (std::ostream &out, Time &o);
 };
 
 
@@ -45,7 +45,10 @@ std::istream& operator >>(std::istream &in, Time &o){
     return in;
 }
 
-
+std::ostream& operator << (std::ostream &out, Time &o){
+    out << o.m_sec  << std::endl;
+    return out;
+}
 
 
 int main() {
@@ -61,6 +64,7 @@ Time h(sec);
 
 std::cin >> h;
 
+std::cout << h << std::endl;
 
 
     return 0;
