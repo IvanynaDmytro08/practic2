@@ -13,6 +13,8 @@ public:
     friend int operator>(Time& o1, int sec);
     friend int operator<(Time& o1, int sec);
     friend int operator!=(Time& o1, int sec);
+    friend std::istream& operator >>(std::istream &in, Time &o);
+
 };
 
 
@@ -37,12 +39,27 @@ int operator!=(Time& o1, int sec){
     return (o1.m_sec != sec);
 }
 
+std::istream& operator >>(std::istream &in, Time &o){
+    in >> o.m_sec;
+
+    return in;
+}
+
+
+
 
 int main() {
+
+
+
 
 int sec = 1;
 Time time(5);
 
+
+Time h(sec);
+
+std::cin >> h;
 
 
 
