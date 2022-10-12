@@ -60,11 +60,23 @@ int sec = 1;
 Time time(5);
 
 
+    if (time > sec)
+        std::cout << "time > sec" << std::endl;
+    else if (time < sec)
+        std::cout << "time < sec" << std::endl;
+    else if (time != sec)
+        std::cout << "time != sec" << std::endl;
+    else
+        std::cout << "time == sec" << std::endl;
+
+
 Time h(sec);
+
+std::cout << "Input number" << std::endl;
 
 std::cin >> h;
 
-std::cout << h << std::endl;
+std::cout << "Show your number - " <<  h << std::endl;
 
 
     return 0;
