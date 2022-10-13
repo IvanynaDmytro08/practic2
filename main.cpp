@@ -9,33 +9,30 @@ public:
     Time(int time) : m_sec(time) {}
 
 
-    friend int operator==(Time &o1, int sec);
-    friend int operator>(Time& o1, int sec);
-    friend int operator<(Time& o1, int sec);
-    friend int operator!=(Time& o1, int sec);
+    friend bool operator==(Time &o1, int sec);
+    friend bool operator>(Time& o1, int sec);
+    friend bool operator<(Time& o1, int sec);
+    friend bool operator!=(Time& o1, int sec);
     friend std::istream& operator >>(std::istream &in, Time &o);
     friend std::ostream& operator << (std::ostream &out, Time &o);
 };
 
 
 
-int operator==(Time& o1, int sec){
-
+bool operator==(Time& o1, int sec){
     return (o1.m_sec == sec);
 }
 
-int operator>(Time& o1, int sec){
-
+bool operator>(Time& o1, int sec){
     return (o1.m_sec > sec);
 }
 
-int operator<(Time& o1, int sec){
-
+bool operator<(Time& o1, int sec){
     return (o1.m_sec < sec);
 
 }
 
-int operator!=(Time& o1, int sec){
+bool operator!=(Time& o1, int sec){
     return (o1.m_sec != sec);
 }
 
@@ -55,8 +52,7 @@ int main() {
 
 
 
-
-int sec = 1;
+    int sec = 1;
 Time time(5);
 
 
